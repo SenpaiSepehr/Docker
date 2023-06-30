@@ -1,0 +1,23 @@
+FROM pytorch/pytorch:latest
+
+# Set up time zone.
+ENV TZ=UTC
+RUN apt-get update
+RUN apt install sudo
+RUN sudo ln -snf /usr/share/zoneinfo/$TZ /etc/localtime
+
+# Install OpenCV from PyPI.
+RUN pip install pyyaml
+# RUN pip install opencv-python==4.5.1.48
+
+# DL dependencies
+RUN pip install pandas 
+RUN pip install torch 
+RUN pip install tqdm 
+RUN pip install torchvision 
+RUN pip install torchaudio
+RUN pip install timm
+RUN pip install matplotlib
+RUN pip install scikit-image
+
+RUN pip install pip install progress
